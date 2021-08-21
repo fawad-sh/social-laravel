@@ -24,7 +24,8 @@ class PostController extends Controller
         ]);
 
         $request->user()->posts()->create([
-            'body' => $request->body
+            'body' => $request->body,
+            'reply' => '',
         ]);
 
         return back();

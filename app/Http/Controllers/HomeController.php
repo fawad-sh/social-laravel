@@ -9,8 +9,8 @@ use App\Models\Post;
 class HomeController extends Controller
 {
     public function index() {
-        $messages = 100;
-        $users = 2;
+        $messages = Post::count();
+        $users = User::count();
         return view('home',[
             'total_messages' => $messages,
             'total_users' => $users,

@@ -12,6 +12,8 @@ class Post extends Model
     protected $fillable = [
         'body',
         'user_id',
+        'reply',
+        'replied',
     ];
 
     public function user() {
