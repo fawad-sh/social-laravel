@@ -38,6 +38,8 @@ Route::get('/posts', [PostController::class, 'index'])
     ->name('posts')
     ->middleware('auth');
 Route::post('/posts', [PostController::class, 'store']);
-Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
-Route::put('/posts/{post}', [PostController::class, 'save']);
 
+Route::get('/posts/{post}/show', [PostController::class, 'show'])->name('posts.show');
+Route::post('/posts/{post}/show', [PostController::class, 'update'])->name('posts.update');
+Route::get('/posts/{post}/reply', [PostController::class, 'reply'])->name('posts.reply');
+Route::post('/posts/{post}/reply', [PostController::class, 'updateReply'])->name('posts.updateReply');
